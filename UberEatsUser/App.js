@@ -1,10 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { FlatList, Image, StyleSheet, Text, View } from "react-native";
+import RestaurantItem from "./src/components/RestaurantItem";
+import restaurants from "./assets/data/restaurants.json";
+import HomeScreen from "./src/screens/HomeScreen";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Yamin</Text>
+      <HomeScreen/>
       <StatusBar style="auto" />
     </View>
   );
@@ -13,8 +16,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 10,
+    paddingVertical: 28, // temporary fix for screens
   },
 });

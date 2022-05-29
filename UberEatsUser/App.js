@@ -4,11 +4,12 @@ import RestaurantItem from "./src/components/RestaurantItem";
 import restaurants from "./assets/data/restaurants.json";
 import HomeScreen from "./src/screens/HomeScreen";
 import RestaurantDetailsScreen from "./src/screens/RestaurantDetailsScreen";
+import DishDetailsScreen from "./src/screens/DishDetailsScreen";
 
 export default function App() {
   return (
     <View style={styles.container}>
-    <RestaurantDetailsScreen/>
+    <DishDetailsScreen/>
       <StatusBar style="light" />
     </View>
   );

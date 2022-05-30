@@ -11,7 +11,7 @@ const Header = ({
       <View style={styles.info}>
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.subtitle}>
-          ${deliveryFee} &#8226; {minDeliveryTime}-{maxDeliveryTime} minutes
+          ${deliveryFee}   {minDeliveryTime}-{maxDeliveryTime} minutes
         </Text>
 
         <Text style={styles.menuTitle}>Menu</Text>

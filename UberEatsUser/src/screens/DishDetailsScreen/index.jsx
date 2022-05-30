@@ -32,7 +32,7 @@ const DishDetailsScreen = () => {
       <Pressable style={styles.addButton}>
         <Text style={styles.addButtonText}>
           Add {quantity} items to basket &#8226; $
-          {quantity > 0 ? (dish.price * quantity).toFixed(2) : dish.price}
+          {(dish.price * quantity).toFixed(2)}
         </Text>
       </Pressable>
     </View>
@@ -46,11 +46,12 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     paddingVertical: 30, // temporary fix
+    padding: 10,
   },
   name: {
     fontSize: 30,
     fontWeight: "600",
-    margin: 10,
+    marginVertical: 10,
   },
   separator: {
     height: 1,
@@ -60,7 +61,6 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 15,
     color: "#525252",
-    marginHorizontal: 20,
   },
   quantityContainer: {
     flexDirection: "row",

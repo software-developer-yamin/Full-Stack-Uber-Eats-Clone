@@ -5,7 +5,7 @@ import orders from "../../../assets/data/orders.json";
 
 const OrdersScreen = () => {
   return (
-    <View style={styles.page} >
+    <View style={styles.page}>
       <FlatList
         data={orders}
         renderItem={({ item }) => <OrderListItem order={item} />}

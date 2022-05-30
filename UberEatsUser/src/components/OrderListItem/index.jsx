@@ -1,16 +1,22 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
-const OrderListItem = ({ order: { Restaurant, status } }) => {
+const OrderListItem = ({ order: { Restaurant, status, id } }) => {
+  const navigation = useNavigation();
+
   return (
-    <View style={styles.container}>
+    <Pressable
+      onPress={() => navigation.navigate("Order", { id })}
+      style={styles.container}
+    >
       <Image source={{ uri: Restaurant.image }} style={styles.image} />
       <View style={styles.details}>
         <Text style={styles.name}>{Restaurant.name}</Text>
         <Text style={styles.price}>3 items &#8226; $34.65</Text>
         <Text>2 days age &#8226; {status}</Text>
       </View>
-    </View>
+    </Pressable>
   );
 };
 
@@ -33,5 +39,5 @@ const styles = StyleSheet.create({
   },
   price: {
     marginVertical: 5,
-  }
+  },
 });

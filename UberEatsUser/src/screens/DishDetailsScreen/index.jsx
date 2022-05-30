@@ -2,11 +2,15 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import restaurants from "../../../assets/data/restaurants.json";
 import { AntDesign } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const dish = restaurants[0].dishes[0];
 
 const DishDetailsScreen = () => {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+
+  const navigation = useNavigation();
+
   return (
     <View style={styles.page}>
       <Text style={styles.name}>{dish.name}</Text>
@@ -15,7 +19,7 @@ const DishDetailsScreen = () => {
 
       <View style={styles.quantityContainer}>
         <AntDesign
-          onPress={() => quantity > 0 && setQuantity(quantity - 1)}
+          onPress={() => quantity > 1 && setQuantity(quantity - 1)}
           name="minuscircleo"
           size={50}
           color="#FF5A5F"
@@ -29,7 +33,10 @@ const DishDetailsScreen = () => {
         />
       </View>
 
-      <Pressable style={styles.addButton}>
+      <Pressable
+        onPress={() => navigation.navigate("Basket")}
+        style={styles.addButton}
+      >
         <Text style={styles.addButtonText}>
           Add {quantity} items to basket &#8226; $
           {(dish.price * quantity).toFixed(2)}
